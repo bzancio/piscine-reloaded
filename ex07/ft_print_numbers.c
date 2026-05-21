@@ -6,11 +6,11 @@
 /*   By: ibuil <ibuil@student.42madrid.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/19 18:52:42 by ibuil             #+#    #+#             */
-/*   Updated: 2026/05/19 18:55:21 by ibuil            ###   ########.fr       */
+/*   Updated: 2026/05/21 19:03:47 by ibuil            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "unistd.h";
+#include <unistd.h>;
 
 void ft_print_numbers(void)
 {

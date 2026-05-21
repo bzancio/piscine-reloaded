@@ -1,25 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_alphabet.c                                :+:      :+:    :+:   */
+/*   ft_iterative_factorial.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ibuil <ibuil@student.42madrid.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/19 18:42:11 by ibuil             #+#    #+#             */
-/*   Updated: 2026/05/21 19:04:01 by ibuil            ###   ########.fr       */
+/*   Created: 2026/05/21 18:48:33 by ibuil             #+#    #+#             */
+/*   Updated: 2026/05/21 18:58:01 by ibuil            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void	ft_print_alphabet(void)
+int	ft_iterative_factorial(int nb)
 {
-	int	c;
+	int	i;
+	int	res;
 
-	c = 'a';
-	while (c <= 'z')
+	i = 1;
+	res = 1;
+	if (nb < 0)
+		return (0);
+	while (i <= nb)
 	{
-		write(1, &c, 1);
-		c++;
+		res *= i;
+		i++;
 	}
+	return (res);
 }

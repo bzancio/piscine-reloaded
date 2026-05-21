@@ -1,25 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_alphabet.c                                :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ibuil <ibuil@student.42madrid.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/19 18:42:11 by ibuil             #+#    #+#             */
-/*   Updated: 2026/05/21 19:04:01 by ibuil            ###   ########.fr       */
+/*   Created: 2026/05/21 19:04:46 by ibuil             #+#    #+#             */
+/*   Updated: 2026/05/21 19:06:12 by ibuil            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void	ft_print_alphabet(void)
+int	ft_strlen(char *str)
 {
-	int	c;
+	int	i;
 
-	c = 'a';
-	while (c <= 'z')
+	i = 0;
+	while (str[i])
 	{
-		write(1, &c, 1);
-		c++;
+		i++;
 	}
+	return (i);
 }

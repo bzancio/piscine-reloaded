@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_numbers.c                                 :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ibuil <ibuil@student.42madrid.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/19 18:52:42 by ibuil             #+#    #+#             */
-/*   Updated: 2026/05/22 16:55:13 by ibuil            ###   ########.fr       */
+/*   Created: 2026/05/22 16:40:55 by ibuil             #+#    #+#             */
+/*   Updated: 2026/05/22 16:55:45 by ibuil            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void	t_print_numbers(void)
+int	ft_strcmp(char *s1, char *s2)
 {
-	int	c;
+	int	i;
 
-	c = '0';
-	while (c <= '9')
+	i = 0;
+	while (s1[i] && s2[i])
 	{
-		write(1, &c, 1);
-		c++;
+		if (s1[i] != s2[i])
+			break ;
+		i++;
 	}
+	return (s1[i] - s2[i]);
 }

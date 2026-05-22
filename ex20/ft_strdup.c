@@ -1,25 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_numbers.c                                 :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ibuil <ibuil@student.42madrid.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/19 18:52:42 by ibuil             #+#    #+#             */
-/*   Updated: 2026/05/22 16:55:13 by ibuil            ###   ########.fr       */
+/*   Created: 2026/05/22 17:45:11 by ibuil             #+#    #+#             */
+/*   Updated: 2026/05/22 17:58:57 by ibuil            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdlib.h>
 
-void	t_print_numbers(void)
+char	*ft_strdup(char *src)
 {
-	int	c;
+	int		i;
+	char	*dest;
 
-	c = '0';
-	while (c <= '9')
+	i = 0;
+	while (src[i])
+		i++;
+	dest = malloc((i + 1) * sizeof(char));
+	if (!dest)
+		return (NULL);
+	i = 0;
+	while (src[i])
 	{
-		write(1, &c, 1);
-		c++;
+		dest[i] = src[i];
+		i++;
 	}
+	dest[i] = '\0';
+	return (dest);
 }

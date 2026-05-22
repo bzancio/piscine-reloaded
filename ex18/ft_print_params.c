@@ -1,25 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_numbers.c                                 :+:      :+:    :+:   */
+/*   ft_print_params.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ibuil <ibuil@student.42madrid.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/19 18:52:42 by ibuil             #+#    #+#             */
-/*   Updated: 2026/05/22 16:55:13 by ibuil            ###   ########.fr       */
+/*   Created: 2026/05/22 16:57:30 by ibuil             #+#    #+#             */
+/*   Updated: 2026/05/22 17:13:59 by ibuil            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	t_print_numbers(void)
+int	main(int argc, char *argv[])
 {
-	int	c;
+	int	i;
+	int	j;
 
-	c = '0';
-	while (c <= '9')
+	if (argc < 2)
+		return (1);
+	i = 1;
+	while (i < argc)
 	{
-		write(1, &c, 1);
-		c++;
+		j = 0;
+		while (argv[i][j])
+		{
+			write(1, &argv[i][j], 1);
+			j++;
+		}
+		write(1, "\n", 1);
+		i++;
 	}
+	return (0);
 }
